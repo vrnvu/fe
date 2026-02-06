@@ -11,13 +11,13 @@ describe("Home", () => {
   it("shows the valentine question", () => {
     const { getByRole } = render(<Home />);
     expect(getByRole("heading", { level: 1 })).toHaveTextContent(
-      "Will you be my Valentine?",
+      "¿Quieres ser mi San Valentín?",
     );
   });
 
   it("renders Yes and No buttons", () => {
     const { getByRole } = render(<Home />);
-    expect(getByRole("button", { name: "Yes" })).toBeInTheDocument();
+    expect(getByRole("button", { name: "Sí" })).toBeInTheDocument();
     expect(getByRole("button", { name: "No" })).toBeInTheDocument();
   });
 });

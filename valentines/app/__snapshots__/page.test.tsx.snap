@@ -11,7 +11,7 @@ exports[`Home > renders the page 1`] = `
       <h1
         class="text-4xl font-bold text-pink-600 md:text-6xl"
       >
-        Will you be my Valentine?
+        ¿Quieres ser mi San Valentín?
       </h1>
       <div
         class="mt-10 flex items-center justify-center gap-6"
@@ -21,7 +21,7 @@ exports[`Home > renders the page 1`] = `
           style="transform: scale(1);"
           type="button"
         >
-          Yes
+          Sí
         </button>
         <button
           class="cursor-pointer rounded-full bg-gray-300 px-8 py-3 text-lg font-semibold text-gray-700 shadow-lg transition-colors hover:bg-gray-400"

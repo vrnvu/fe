@@ -6,12 +6,12 @@ type Phase = "question" | "celebration" | "envelope" | "letter";
 
 const NO_TEXTS = [
   "No",
-  "Are you sure?",
-  "Really?",
-  "Think again!",
-  "Last chance!",
-  "Don't do this!",
-  "Pretty please?",
+  "¿Estás segura?",
+  "¿En serio?",
+  "¡Piénsalo otra vez!",
+  "¡Última oportunidad!",
+  "¡No me hagas esto!",
+  "¿Porfi?",
 ];
 
 function getRandomPosition() {
@@ -62,7 +62,7 @@ function Envelope({
     <button
       type="button"
       onClick={opened ? undefined : onOpen}
-      aria-label="Open the love letter"
+      aria-label="Abre la carta de amor"
       className="relative cursor-pointer border-none bg-transparent"
       style={{ perspective: "800px" }}
     >
@@ -107,15 +107,15 @@ function Letter() {
       style={{ transform: "rotate(-1deg)" }}
     >
       <div className="font-serif text-gray-800">
-        <p className="mb-4 text-lg italic text-pink-600">Dear Valentine,</p>
+        <p className="mb-4 text-lg italic text-pink-600">Querida mía,</p>
         <p className="mb-4 leading-relaxed">
-          Every day with you is a gift I never want to stop unwrapping. You make
-          the ordinary extraordinary and the mundane magical.
+          Cada día contigo es un regalo que no quiero dejar de abrir. Haces que
+          lo ordinario sea extraordinario y lo mundano, mágico.
         </p>
         <p className="mt-6 text-right italic text-pink-600">
-          With all my love,
+          Con todo mi amor,
           <br />
-          Yours forever
+          Tuyo por siempre
         </p>
       </div>
     </article>
@@ -150,10 +150,10 @@ export function ValentineCard() {
         <Hearts />
         <div className="animate-pulse-soft text-center">
           <h1 className="text-5xl font-bold text-pink-600 md:text-7xl">
-            Yay!
+            ¡Bien!
           </h1>
           <p className="mt-4 text-2xl text-pink-500 md:text-3xl">
-            I knew you&apos;d say yes!
+            ¡Sabía que dirías que sí!
           </p>
         </div>
       </main>
@@ -164,7 +164,7 @@ export function ValentineCard() {
     return (
       <main className="flex min-h-dvh animate-envelope-appear flex-col items-center justify-center gap-8 px-4">
         <p className="animate-fade-in text-2xl font-semibold text-pink-600 md:text-3xl">
-          You have a letter...
+          Tienes una carta...
         </p>
         <Envelope opened={false} onOpen={() => setPhase("letter")} />
       </main>
@@ -175,7 +175,7 @@ export function ValentineCard() {
     return (
       <main className="flex min-h-dvh flex-col items-center justify-center gap-8 px-4">
         <p className="text-2xl font-semibold text-pink-600 md:text-3xl">
-          A letter for you
+          Una carta para ti
         </p>
         <Letter />
         <Envelope opened onOpen={() => {}} />
@@ -187,7 +187,7 @@ export function ValentineCard() {
     <main className="flex min-h-dvh flex-col items-center justify-center px-4">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-pink-600 md:text-6xl">
-          Will you be my Valentine?
+          ¿Quieres ser mi San Valentín?
         </h1>
 
         <div className="mt-10 flex items-center justify-center gap-6">
@@ -197,7 +197,7 @@ export function ValentineCard() {
             className="cursor-pointer rounded-full bg-pink-500 px-8 py-3 text-lg font-semibold text-white shadow-lg transition-transform hover:bg-pink-600"
             style={{ transform: `scale(${yesScale})` }}
           >
-            Yes
+            Sí
           </button>
 
           {noPosition === null ? (
