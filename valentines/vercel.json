@@ -1,4 +1,1 @@
-{
-	"installCommand": "npx -y deno@latest install",
-	"buildCommand": "npx -y deno@latest task build"
-}
+{}
