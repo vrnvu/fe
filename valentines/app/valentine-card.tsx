@@ -1,6 +1,8 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+
+type Phase = "question" | "celebration" | "envelope" | "letter";
 
 const NO_TEXTS = [
   "No",
@@ -49,20 +51,100 @@ function Hearts() {
   );
 }
 
+function Envelope({
+  opened,
+  onOpen,
+}: {
+  opened: boolean;
+  onOpen: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={opened ? undefined : onOpen}
+      aria-label="Open the love letter"
+      className="relative cursor-pointer border-none bg-transparent"
+      style={{ perspective: "800px" }}
+    >
+      {/* Envelope body */}
+      <div className="relative h-44 w-64 overflow-hidden rounded-lg bg-amber-100 shadow-xl md:h-56 md:w-80">
+        {/* Heart seal */}
+        {!opened && (
+          <div className="absolute inset-0 z-10 flex items-center justify-center">
+            <span className="text-3xl text-red-400">&#10084;</span>
+          </div>
+        )}
+
+        {/* Letter peeking out */}
+        <div
+          className={`absolute inset-x-3 top-0 rounded bg-white shadow-md ${
+            opened ? "animate-letter-slide" : "opacity-0"
+          }`}
+          style={{ height: "85%" }}
+        />
+      </div>
+
+      {/* Envelope flap */}
+      <div
+        className={`absolute top-0 left-0 h-22 w-64 bg-amber-200 md:h-28 md:w-80 ${
+          opened ? "animate-flap-open" : ""
+        }`}
+        style={{
+          clipPath: "polygon(0 100%, 50% 0, 100% 100%)",
+          transformOrigin: "top center",
+          backfaceVisibility: "hidden",
+          zIndex: opened ? 0 : 20,
+        }}
+      />
+    </button>
+  );
+}
+
+function Letter() {
+  return (
+    <article
+      className="animate-fade-in mx-4 max-w-md rounded-lg bg-white p-8 shadow-2xl md:p-12"
+      style={{ transform: "rotate(-1deg)" }}
+    >
+      <div className="font-serif text-gray-800">
+        <p className="mb-4 text-lg italic text-pink-600">Dear Valentine,</p>
+        <p className="mb-4 leading-relaxed">
+          Every day with you is a gift I never want to stop unwrapping. You make
+          the ordinary extraordinary and the mundane magical.
+        </p>
+        <p className="mt-6 text-right italic text-pink-600">
+          With all my love,
+          <br />
+          Yours forever
+        </p>
+      </div>
+    </article>
+  );
+}
+
 export function ValentineCard() {
+  const [phase, setPhase] = useState<Phase>("question");
   const [dodgeCount, setDodgeCount] = useState(0);
-  const [accepted, setAccepted] = useState(false);
-  const [noPosition, setNoPosition] = useState<{ x: number; y: number } | null>(null);
+  const [noPosition, setNoPosition] = useState<{
+    x: number;
+    y: number;
+  } | null>(null);
 
   const dodgeNo = useCallback(() => {
     setNoPosition(getRandomPosition());
     setDodgeCount((c) => c + 1);
   }, []);
 
+  useEffect(() => {
+    if (phase !== "celebration") return;
+    const timer = setTimeout(() => setPhase("envelope"), 4000);
+    return () => clearTimeout(timer);
+  }, [phase]);
+
   const yesScale = Math.min(1 + dodgeCount * 0.1, 2);
   const noText = NO_TEXTS[Math.min(dodgeCount, NO_TEXTS.length - 1)];
 
-  if (accepted) {
+  if (phase === "celebration") {
     return (
       <main className="flex min-h-dvh flex-col items-center justify-center px-4">
         <Hearts />
@@ -78,6 +160,29 @@ export function ValentineCard() {
     );
   }
 
+  if (phase === "envelope") {
+    return (
+      <main className="flex min-h-dvh animate-envelope-appear flex-col items-center justify-center gap-8 px-4">
+        <p className="animate-fade-in text-2xl font-semibold text-pink-600 md:text-3xl">
+          You have a letter...
+        </p>
+        <Envelope opened={false} onOpen={() => setPhase("letter")} />
+      </main>
+    );
+  }
+
+  if (phase === "letter") {
+    return (
+      <main className="flex min-h-dvh flex-col items-center justify-center gap-8 px-4">
+        <p className="text-2xl font-semibold text-pink-600 md:text-3xl">
+          A letter for you
+        </p>
+        <Letter />
+        <Envelope opened onOpen={() => {}} />
+      </main>
+    );
+  }
+
   return (
     <main className="flex min-h-dvh flex-col items-center justify-center px-4">
       <div className="text-center">
@@ -88,7 +193,7 @@ export function ValentineCard() {
         <div className="mt-10 flex items-center justify-center gap-6">
           <button
             type="button"
-            onClick={() => setAccepted(true)}
+            onClick={() => setPhase("celebration")}
             className="cursor-pointer rounded-full bg-pink-500 px-8 py-3 text-lg font-semibold text-white shadow-lg transition-transform hover:bg-pink-600"
             style={{ transform: `scale(${yesScale})` }}
           >
