@@ -24,7 +24,8 @@
       "Bash(jj log:*)",
       "Bash(jj bookmark set:*)",
       "Bash(ls:*)",
-      "Bash(jj status:*)"
+      "Bash(jj status:*)",
+      "Bash(jj tug:*)"
     ]
   }
 }
