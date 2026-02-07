@@ -1,0 +1,187 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App > matches snapshot 1`] = `
+<div>
+  <main
+    class="flex min-h-dvh flex-col items-center gap-8 px-4 py-12 animate-fade-in"
+  >
+    <h1
+      class="text-4xl font-bold text-rose-800 tracking-tight"
+    >
+      Nuestro Mundo
+    </h1>
+    <p
+      class="text-rose-600/80 text-lg"
+    >
+      6
+       destinos por descubrir juntos
+    </p>
+    <section
+      class="w-full max-w-4xl rounded-2xl bg-white/80 p-4 shadow-lg backdrop-blur"
+    >
+      <svg
+        class="rsm-svg w-full h-auto"
+        viewBox="0 0 800 450"
+      >
+        <g>
+          <rect
+            fill="transparent"
+            height="450"
+            width="800"
+          />
+          <g
+            class="rsm-zoomable-group "
+            transform="translate(0 0) scale(1)"
+          >
+            <g
+              class="rsm-geographies "
+            />
+            <g
+              class="rsm-marker "
+              transform="translate(383.13800757733986, 118.5813719104165)"
+            >
+              <circle
+                class="animate-pulse-soft origin-center"
+                fill="none"
+                opacity="0.6"
+                r="6"
+                stroke="#f43f5e"
+                stroke-width="1.5"
+                style="animation-delay: 0s;"
+              />
+              <circle
+                class="animate-dot-appear origin-center"
+                fill="#f43f5e"
+                r="4"
+                stroke="#fff"
+                stroke-width="1.5"
+                style="animation-delay: 0s;"
+              />
+            </g>
+            <g
+              class="rsm-marker "
+              transform="translate(359.55272762331725, 168.0058668615012)"
+            >
+              <circle
+                class="animate-pulse-soft origin-center"
+                fill="none"
+                opacity="0.6"
+                r="6"
+                stroke="#f43f5e"
+                stroke-width="1.5"
+                style="animation-delay: 0.3s;"
+              />
+              <circle
+                class="animate-dot-appear origin-center"
+                fill="#f43f5e"
+                r="4"
+                stroke="#fff"
+                stroke-width="1.5"
+                style="animation-delay: 0.15s;"
+              />
+            </g>
+            <g
+              class="rsm-marker "
+              transform="translate(194.2778839877957, 351.9413472601525)"
+            >
+              <circle
+                class="animate-pulse-soft origin-center"
+                fill="none"
+                opacity="0.6"
+                r="6"
+                stroke="#f43f5e"
+                stroke-width="1.5"
+                style="animation-delay: 0.6s;"
+              />
+              <circle
+                class="animate-dot-appear origin-center"
+                fill="#f43f5e"
+                r="4"
+                stroke="#fff"
+                stroke-width="1.5"
+                style="animation-delay: 0.3s;"
+              />
+            </g>
+            <g
+              class="rsm-marker "
+              transform="translate(671.5718528002086, 184.54250047066495)"
+            >
+              <circle
+                class="animate-pulse-soft origin-center"
+                fill="none"
+                opacity="0.6"
+                r="6"
+                stroke="#f43f5e"
+                stroke-width="1.5"
+                style="animation-delay: 0.8999999999999999s;"
+              />
+              <circle
+                class="animate-dot-appear origin-center"
+                fill="#f43f5e"
+                r="4"
+                stroke="#fff"
+                stroke-width="1.5"
+                style="animation-delay: 0.44999999999999996s;"
+              />
+            </g>
+            <g
+              class="rsm-marker "
+              transform="translate(642.7253825358042, 179.23528441154116)"
+            >
+              <circle
+                class="animate-pulse-soft origin-center"
+                fill="none"
+                opacity="0.6"
+                r="6"
+                stroke="#f43f5e"
+                stroke-width="1.5"
+                style="animation-delay: 1.2s;"
+              />
+              <circle
+                class="animate-dot-appear origin-center"
+                fill="#f43f5e"
+                r="4"
+                stroke="#fff"
+                stroke-width="1.5"
+                style="animation-delay: 0.6s;"
+              />
+            </g>
+            <g
+              class="rsm-marker "
+              transform="translate(425.4929946396225, 199.80305580998618)"
+            >
+              <circle
+                class="animate-pulse-soft origin-center"
+                fill="none"
+                opacity="0.6"
+                r="6"
+                stroke="#f43f5e"
+                stroke-width="1.5"
+                style="animation-delay: 1.5s;"
+              />
+              <circle
+                class="animate-dot-appear origin-center"
+                fill="#f43f5e"
+                r="4"
+                stroke="#fff"
+                stroke-width="1.5"
+                style="animation-delay: 0.75s;"
+              />
+            </g>
+          </g>
+        </g>
+      </svg>
+    </section>
+    <div
+      aria-live="polite"
+      class="h-12 flex items-center justify-center text-center"
+    >
+      <p
+        class="text-rose-400 text-sm"
+      >
+        Pasa el ratón por un destino
+      </p>
+    </div>
+  </main>
+</div>
+`;

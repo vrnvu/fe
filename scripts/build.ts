@@ -1,6 +1,6 @@
 import $ from "dax";
 
-const projects = ["valentines", "pairs"] as const;
+const projects = ["valentines", "pairs", "world"] as const;
 
 for (const project of projects) {
   $.logStep("Building", project);

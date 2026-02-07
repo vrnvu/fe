@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [valentines, pairs]
+        project: [valentines, pairs, world]
     defaults:
       run:
         working-directory: ${{ matrix.project }}

@@ -5,6 +5,7 @@
   "rewrites": [
     { "source": "/valentines/:path*", "destination": "/valentines/index.html" },
     { "source": "/pairs/:path*", "destination": "/pairs/index.html" },
+    { "source": "/world/:path*", "destination": "/world/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

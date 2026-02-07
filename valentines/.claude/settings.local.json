@@ -19,7 +19,12 @@
       "Bash(pnpm add:*)",
       "Bash(test:*)",
       "Bash(jj diff:*)",
-      "Bash(cd /Users/arnau/Documents/dev/fe:*)"
+      "Bash(cd /Users/arnau/Documents/dev/fe:*)",
+      "Bash(jj git push:*)",
+      "Bash(jj log:*)",
+      "Bash(jj bookmark set:*)",
+      "Bash(ls:*)",
+      "Bash(jj status:*)"
     ]
   }
 }
