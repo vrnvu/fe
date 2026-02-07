@@ -14,7 +14,8 @@
       "Bash(npx:*)",
       "Bash(node:*)",
       "Bash(pnpm test:*)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "WebFetch(domain:www.npmjs.com)"
     ]
   }
 }
