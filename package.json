@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.ts"
+  },
+  "devDependencies": {
+    "dax": "^0.45.0"
+  }
+}

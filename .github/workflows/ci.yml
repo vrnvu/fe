@@ -8,11 +8,14 @@ on:
 
 jobs:
   test:
-    name: Test & Build
+    name: Test & Build (${{ matrix.project }})
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [valentines, pairs]
     defaults:
       run:
-        working-directory: valentines
+        working-directory: ${{ matrix.project }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -22,7 +25,7 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-          cache-dependency-path: valentines/pnpm-lock.yaml
+          cache-dependency-path: ${{ matrix.project }}/pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
       - run: pnpm build

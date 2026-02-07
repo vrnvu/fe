@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnau's Projects</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: oklch(0.97 0.01 350);
+      color: oklch(0.3 0.05 350);
+    }
+
+    main {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .projects {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .projects a {
+      display: block;
+      padding: 1.5rem 2.5rem;
+      border-radius: 1rem;
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      background: oklch(0.55 0.2 350);
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px oklch(0.5 0.15 350 / 0.3);
+    }
+
+    .projects a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px oklch(0.5 0.15 350 / 0.4);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="projects">
+      <a href="/valentines">Mi San Valentin</a>
+      <a href="/pairs">Regalitos para mi Tania</a>
+    </nav>
+  </main>
+</body>
+</html>

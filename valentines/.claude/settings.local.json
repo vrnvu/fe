@@ -3,7 +3,23 @@
     "allow": [
       "Bash(pnpm install:*)",
       "Bash(pnpm test:*)",
-      "Bash(jj commit:*)"
+      "Bash(jj commit:*)",
+      "Bash(pnpm build:*)",
+      "Bash(npx vite build --help:*)",
+      "WebSearch",
+      "Bash(chmod:*)",
+      "Bash(bash scripts/build.sh:*)",
+      "Bash(npx vite build:*)",
+      "Bash(node -e:*)",
+      "Bash(node:*)",
+      "Bash(nvm exec:*)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(pnpm remove:*)",
+      "Bash(pnpm add:*)",
+      "Bash(test:*)",
+      "Bash(jj diff:*)",
+      "Bash(cd /Users/arnau/Documents/dev/fe:*)"
     ]
   }
 }
