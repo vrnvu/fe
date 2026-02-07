@@ -1,0 +1,36 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App > renders the page 1`] = `
+<div>
+  <main
+    class="flex min-h-dvh flex-col items-center justify-center px-4"
+  >
+    <div
+      class="text-center"
+    >
+      <h1
+        class="text-4xl font-bold text-pink-600 md:text-6xl"
+      >
+        ¿Quieres ser mi San Valentín?
+      </h1>
+      <div
+        class="mt-10 flex items-center justify-center gap-6"
+      >
+        <button
+          class="cursor-pointer rounded-full bg-pink-500 px-8 py-3 text-lg font-semibold text-white shadow-lg transition-transform hover:bg-pink-600"
+          style="transform: scale(1);"
+          type="button"
+        >
+          Sí
+        </button>
+        <button
+          class="cursor-pointer rounded-full bg-gray-300 px-8 py-3 text-lg font-semibold text-gray-700 shadow-lg transition-colors hover:bg-gray-400"
+          type="button"
+        >
+          No
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+`;
