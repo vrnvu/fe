@@ -105,10 +105,9 @@ function Letter() {
       style={{ transform: "rotate(-1deg)" }}
     >
       <div className="font-serif text-gray-800">
-        <p className="mb-4 text-lg italic text-pink-600">Querida mía,</p>
+        <p className="mb-4 text-lg italic text-pink-600">Xikita mia,</p>
         <p className="mb-4 leading-relaxed">
-          Cada día contigo es un regalo que no quiero dejar de abrir. Haces que
-          lo ordinario sea extraordinario y lo mundano, mágico.
+          Cada día contigo es un regalo que no quiero dejar de abrir. Tus que dius! resuenan en mi corazon. Y tus ojos chiquitos son un infinito al que mirar.
         </p>
         <p className="mt-6 text-right italic text-pink-600">
           Con todo mi amor,
@@ -151,7 +150,7 @@ export function ValentineCard() {
             ¡Bien!
           </h1>
           <p className="mt-4 text-2xl text-pink-500 md:text-3xl">
-            ¡Sabía que dirías que sí!
+            Siuuuuuuuuuuuuuuuu!
           </p>
         </div>
       </main>
