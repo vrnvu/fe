@@ -4,18 +4,19 @@ Valentine's Day themed frontend page.
 
 ## Stack
 
-- Deno + Next.js (App Router) + React 19 + Tailwind CSS v4
-- Run locally: `deno task dev` from this directory
+- Node.js + Vite + React 19 + Tailwind CSS v4 + pnpm
 
 ## Commands
 
-- `deno task dev` — start dev server
-- `deno task test` — run tests once
-- `deno task test:watch` — run tests in watch mode
+- `pnpm dev` — start dev server
+- `pnpm build` — production build (output in `dist/`)
+- `pnpm test` — run tests once
+- `pnpm test:watch` — run tests in watch mode
 
 ## Project Notes
 
-- Single-page project for now — everything lives in `app/`
+- Single-page client-side app — everything lives in `src/`
+- Entry point: `index.html` → `src/main.tsx` → `src/app.tsx`
 - Keep it visually playful — Valentine's theme (pinks, reds, hearts)
-- Tests colocated next to components: `page.test.tsx` beside `page.tsx`
+- Tests colocated next to components: `app.test.tsx` beside `app.tsx`
 - Snapshot tests for static markup, behavioral tests only for interactive parts

@@ -4,8 +4,8 @@
 
 - Monorepo root: each subdirectory is a standalone frontend project
 - Version control: **jujutsu (jj)** with git backend — use `jj` commands, never raw `git`
-- Runtime: **Deno** (not Node.js)
-- Stack: TypeScript, React, Next.js, Tailwind CSS
+- Runtime: **Node.js** with **pnpm** as package manager
+- Stack: TypeScript, React, Vite, Tailwind CSS
 - Hosting/CI: GitHub + GitHub Actions
 
 ## Version Control Rules
@@ -48,7 +48,6 @@ This monorepo targets modern browsers and runtimes. Prefer current standards ove
 - Use `use()` hook to read promises and context
 - Use `useActionState` for form action state (replaces `useFormState`)
 - Use `useOptimistic` for optimistic UI updates
-- Server Components are the default — only add `"use client"` when truly needed
 
 ## Coding Style
 
@@ -63,13 +62,11 @@ This monorepo targets modern browsers and runtimes. Prefer current standards ove
 - Prefer early returns to reduce nesting
 - No barrel files (`index.ts` re-exports) unless the project explicitly uses them
 
-## React & Next.js
+## React & Vite
 
-- Default to Server Components; only add `"use client"` when state/effects/browser APIs are needed
 - Keep components small and composable — extract when a component exceeds ~80 lines
-- Use Next.js App Router conventions (`app/` directory, `page.tsx`, `layout.tsx`)
-- Prefer `next/image` over raw `<img>` tags
-- Prefer `next/link` over raw `<a>` tags for internal navigation
+- Use Vite's `index.html` as the entry point with a `src/main.tsx` mount file
+- All components are client-side — no server components or SSR
 
 ## Tailwind CSS
 
@@ -80,8 +77,8 @@ This monorepo targets modern browsers and runtimes. Prefer current standards ove
 
 ## Testing
 
-- **Runner**: Vitest (not Jest, not Deno's built-in runner) — run via `deno task test`
-- **DOM environment**: happy-dom (not jsdom — jsdom has compatibility issues with Deno)
+- **Runner**: Vitest — run via `pnpm test`
+- **DOM environment**: happy-dom
 - **React component testing**: React Testing Library (`@testing-library/react`)
 - Test file naming: `*.test.ts` or `*.test.tsx` colocated with source
 - **Snapshot testing** for presentational/static components — cheap way to catch unintended markup changes
@@ -92,9 +89,9 @@ This monorepo targets modern browsers and runtimes. Prefer current standards ove
 
 ## Dependencies
 
-- Use Deno-native imports where possible (`jsr:`, `npm:` specifiers)
-- Pin dependency versions in `deno.json`
-- Prefer the standard library (`@std/`) before reaching for third-party packages
+- Manage dependencies via `pnpm add` / `pnpm add -D`
+- Pin dependency versions in `package.json`
+- Prefer well-maintained, minimal packages — avoid bloated kitchen-sink libraries
 
 ## Claude Conversation Style
 
