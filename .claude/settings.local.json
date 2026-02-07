@@ -15,7 +15,8 @@
       "Bash(node:*)",
       "Bash(pnpm test:*)",
       "Bash(pnpm build:*)",
-      "WebFetch(domain:www.npmjs.com)"
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:cdn.jsdelivr.net)"
     ]
   }
 }
