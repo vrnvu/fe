@@ -7,7 +7,8 @@
       "Bash(lsof:*)",
       "Bash(xargs kill:*)",
       "Bash(gh repo view:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(ls:*)"
     ]
   }
 }
