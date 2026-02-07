@@ -1,5 +1,5 @@
 import { ValentineCard } from "./valentine-card";
 
-export default function Home() {
+export function App() {
   return <ValentineCard />;
 }
