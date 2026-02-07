@@ -12,6 +12,14 @@ const NO_TEXTS = [
   "¿Porfi?",
 ];
 
+const HEARTS = Array.from({ length: 30 }, (_, i) => ({
+  id: i,
+  left: Math.random() * 100,
+  size: 16 + Math.random() * 24,
+  delay: Math.random() * 2,
+  duration: 3 + Math.random() * 3,
+}));
+
 function getRandomPosition() {
   const padding = 80;
   const x = padding + Math.random() * (window.innerWidth - padding * 2);
@@ -20,17 +28,10 @@ function getRandomPosition() {
 }
 
 function Hearts() {
-  const hearts = Array.from({ length: 30 }, (_, i) => ({
-    id: i,
-    left: Math.random() * 100,
-    size: 16 + Math.random() * 24,
-    delay: Math.random() * 2,
-    duration: 3 + Math.random() * 3,
-  }));
 
   return (
     <div className="pointer-events-none fixed inset-0 overflow-hidden">
-      {hearts.map((h) => (
+      {HEARTS.map((h) => (
         <span
           key={h.id}
           className="absolute animate-[float-up_var(--dur)_ease-in_var(--delay)_forwards] text-red-400 opacity-0"
@@ -54,7 +55,7 @@ function Envelope({
   onOpen,
 }: {
   opened: boolean;
-  onOpen: () => void;
+  onOpen?: () => void;
 }) {
   return (
     <button
@@ -132,6 +133,9 @@ export function ValentineCard() {
     setDodgeCount((c) => c + 1);
   }, []);
 
+  const celebrate = useCallback(() => setPhase("celebration"), []);
+  const openLetter = useCallback(() => setPhase("letter"), []);
+
   useEffect(() => {
     if (phase !== "celebration") return;
     const timer = setTimeout(() => setPhase("envelope"), 4000);
@@ -163,7 +167,7 @@ export function ValentineCard() {
         <p className="animate-fade-in text-2xl font-semibold text-pink-600 md:text-3xl">
           Tienes una carta...
         </p>
-        <Envelope opened={false} onOpen={() => setPhase("letter")} />
+        <Envelope opened={false} onOpen={openLetter} />
       </main>
     );
   }
@@ -175,7 +179,7 @@ export function ValentineCard() {
           Una carta para ti
         </p>
         <Letter />
-        <Envelope opened onOpen={() => {}} />
+        <Envelope opened />
       </main>
     );
   }
@@ -190,7 +194,7 @@ export function ValentineCard() {
         <div className="mt-10 flex items-center justify-center gap-6">
           <button
             type="button"
-            onClick={() => setPhase("celebration")}
+            onClick={celebrate}
             className="cursor-pointer rounded-full bg-pink-500 px-8 py-3 text-lg font-semibold text-white shadow-lg transition-transform hover:bg-pink-600"
             style={{ transform: `scale(${yesScale})` }}
           >
